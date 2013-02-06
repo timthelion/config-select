@@ -20,6 +20,9 @@ That is config-select
 
 config-select is a program which is generally usefull for swapping out config files.
 
+It can be installed with the command:
+`cabal install config-select`
+
 It was origionally developed as an X11 display manager to swap out .xinitrc files.
 
 It provides you with a nice menu to select the configuration profile you want.
