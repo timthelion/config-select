@@ -135,7 +135,10 @@ tell the user that no config was selected and exit.
 > linkDestinationCheck' splitUpPath@(_:_:_) = do
 >  let profilesDir' = joinPath $ (init.init) splitUpPath
 >  canonProfilesDir <- canonicalizePath profilesDir
+>  cwd<-getCurrentDirectory
+>  setCurrentDirectory destDir
 >  canonProfilesDir' <- canonicalizePath profilesDir'
+>  setCurrentDirectory cwd
 >  case canonProfilesDir == canonProfilesDir' of
 >   True ->
 >    return $ categorizedConfigs
